@@ -8,4 +8,15 @@ ruby '3.0.0'
 
 gem 'rubocop'
 
-gem 'rspec'
+
+
+
+group :test do
+  gem 'rspec'
+
+  gem 'rubocop-rspec'
+
+  gem 'simplecov', require: false
+
+  gem 'simplecov-console', require: false
+end
