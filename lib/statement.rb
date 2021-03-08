@@ -4,12 +4,18 @@
 class Statement
   attr_reader :history
 
+  #Error message constants
+  NO_TRANSACTIONS_WARNING = 'No transactions to show'
+
+  # statement columns constant
+  COLUMN_LABELS = ['date', 'credit', 'debit', 'balance']
   def initialize
     @history = []
   end
 
   def transaction_summary
-    'No transactions to show'
+    return NO_TRANSACTIONS_WARNING if no_transactions
+    COLUMN_LABELS.join(' || ') + "\n" + transaction_table
   end
 
   def add_credit(credit, balance)
@@ -38,5 +44,19 @@ class Statement
 
   def transaction(credit, debit, balance)
     { date: transaction_date, credit: credit, debit: debit, balance: balance }
+  end
+
+  def no_transactions
+    @history.empty?
+  end
+
+  def transaction_table
+    line = []
+    @history.map do |transaction|
+      transaction.each do |key, value|
+        line.push(value)
+      end
+    end
+    return line.join(' || ')
   end
 end
