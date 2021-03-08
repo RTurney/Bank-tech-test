@@ -51,3 +51,31 @@ The full spectrum of tests can be found within the spec folder and are run with 
  * deposit method
  * withdrawal method
  * print statement method
+
+## User stories:
+
+```
+As a capitalist,
+So that I can hoard my money,
+I would like to open a bank account
+```
+```
+As a capitalist,
+So that I can store my money safely,
+I would like to deposit money in my account.
+```
+```
+As a capitalist,
+So that I can feed my family,
+I would like to withdraw money from my account when needed.
+```
+```
+As a capitalist,
+So that I can plan for next month,
+I would like to see the current amount in my account.
+```
+```
+As a capitalist,
+So that I can monitor my account for identity theft,
+I would like to see a bank statement with dates of each transaction.
+```
