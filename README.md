@@ -53,8 +53,11 @@ The full spectrum of tests can be found within the spec folder and are run with 
  * a bank object
  * deposit method
  * withdrawal method
- * print statement method
- * link bank account with database
+ * statement class
+ * statement includes credit with date and balance
+ * statement includes debit with date and balance
+ * statement can format itself in as a table with all transactions
+ * bank can print statement as a table 
 
 ## User stories:
 
