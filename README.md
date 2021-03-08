@@ -13,6 +13,10 @@ This code is still in development.
 * Can deposit money within the account
 * Can withdraw money from the account
 * Can only withdraw money that is available in account
+* Statement class
+* Statement class has empty history on initialisation
+* statement class can add credit transaction to history
+
 
 ## User instructions:
 
@@ -50,14 +54,14 @@ The full spectrum of tests can be found within the spec folder and are run with 
 ## Upcoming features:
  This is a list of upcoming features to be implemented within this project:
 
- * a bank object
- * deposit method
- * withdrawal method
- * statement class
- * statement includes credit with date and balance
+ * ~~a bank object~~
+ * ~~deposit method~~
+ * ~~withdrawal method~~
+ * ~~statement class~~
+ * ~~statement includes credit with date and balance~~
  * statement includes debit with date and balance
  * statement can format itself in as a table with all transactions
- * bank can print statement as a table 
+ * bank can print statement as a table
 
 ## User stories:
 
