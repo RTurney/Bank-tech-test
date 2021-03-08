@@ -2,7 +2,6 @@
 
 require 'statement'
 
-# class for Bank account transaction history
 describe Statement do
   before(:each) do
     @statement = Statement.new
@@ -15,12 +14,11 @@ describe Statement do
   end
 
   describe '.add_credit' do
-
     it 'will add the date, credit amount and balance to the hash' do
       time = Time.new
-      date = time.strftime("%Y/%m/%d")
+      date = time.strftime('%Y/%m/%d')
       @statement.add_credit(100, 0)
-      expect(@statement.history[0]).to eq({date: date, credit: 100, balance: 100})
+      expect(@statement.history[0]).to eq({ date: date, credit: 100, debit: 0, balance: 100 })
     end
   end
 
