@@ -14,11 +14,19 @@ describe Statement do
   end
 
   describe '.add_credit' do
-    it 'will add the date, credit amount and balance to the hash' do
-      time = Time.new
-      date = time.strftime('%Y/%m/%d')
+    it 'will add the date, credit amount and balance to the history' do
+      date = Time.new.strftime('%Y/%m/%d')
       @statement.add_credit(100, 0)
       expect(@statement.history[0]).to eq({ date: date, credit: 100, debit: 0, balance: 100 })
+    end
+  end
+
+  describe '.withdraw_debit' do
+
+    it "will add the date, credit amount and balance to the history" do
+      date = Time.new.strftime('%Y/%m/%d')
+      @statement.withdraw_debit(10, 20)
+      expect(@statement.history[0]).to eq({ date: date, credit: 0, debit: 10, balance: 10 })
     end
   end
 
