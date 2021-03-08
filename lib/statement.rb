@@ -13,11 +13,13 @@ class Statement
   end
 
   def add_credit(credit, balance)
-    @history.push(credit_transaction(credit, balance))
+    current_balance = credit_calculator(credit, balance)
+    @history.push(transaction(credit, 0,  current_balance))
   end
 
   def withdraw_debit(debit, balance)
-    @history.push(debit_transaction(debit, balance))
+    current_balance = debit_calculator(debit, balance)
+    @history.push(transaction(0, debit, current_balance))
   end
 
   private #---------------------
@@ -26,15 +28,15 @@ class Statement
     Time.new.strftime('%Y/%m/%d')
   end
 
-  def balance_calculator(amount, current_balance)
+  def credit_calculator(amount, current_balance)
     current_balance + amount
   end
 
-  def credit_transaction(credit, balance)
-    { date: transaction_date, credit: credit, debit: 0, balance: balance_calculator(credit, balance) }
+  def debit_calculator(amount, current_balance)
+    current_balance - amount
   end
 
-  def debit_transaction(debit, balance)
-    { date: transaction_date, credit: 0, debit: debit, balance: balance_calculator(-debit, balance) }
+  def transaction(credit, debit, balance)
+    { date: transaction_date, credit: credit, debit: debit, balance: balance }
   end
 end

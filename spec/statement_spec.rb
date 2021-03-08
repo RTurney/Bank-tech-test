@@ -22,8 +22,7 @@ describe Statement do
   end
 
   describe '.withdraw_debit' do
-
-    it "will add the date, credit amount and balance to the history" do
+    it 'will add the date, credit amount and balance to the history' do
       date = Time.new.strftime('%Y/%m/%d')
       @statement.withdraw_debit(10, 20)
       expect(@statement.history[0]).to eq({ date: date, credit: 0, debit: 10, balance: 10 })
