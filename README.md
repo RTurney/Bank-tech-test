@@ -10,6 +10,9 @@ This code is still in development.
 
 * Bank class exists
 * Has an empty account on initialisation
+* Can deposit money within the account
+* Can withdraw money from the account
+* Can only withdraw money that is available in account
 
 ## User instructions:
 
@@ -51,6 +54,7 @@ The full spectrum of tests can be found within the spec folder and are run with 
  * deposit method
  * withdrawal method
  * print statement method
+ * link bank account with database
 
 ## User stories:
 
