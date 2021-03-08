@@ -4,7 +4,9 @@ This is the repo for the bank tech test. This script will allow users to withdra
 
 ## Build status:
 
-This code is still in development.
+At its current implementation, this code allows users to initialise a bank account, add and withdraw a money.
+
+A transaction summary statement is still in development. 
 
 ## Implemented features:
 
