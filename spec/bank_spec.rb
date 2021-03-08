@@ -1,8 +1,8 @@
 # frozen_string_literal: true
+
 require 'bank'
 
 describe Bank do
-
   before(:each) do
     @bank = Bank.new
   end

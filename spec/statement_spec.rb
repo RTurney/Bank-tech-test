@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 require 'statement'
 
+# class for Bank account transaction history
 describe Statement do
-
   before(:each) do
     @statement = Statement.new
   end
 
   describe 'on initialisation' do
-
     it 'will have an empty hash' do
       expect(@statement.history).to eq []
     end
@@ -23,7 +24,6 @@ describe Statement do
   # end
 
   describe '.transaction_summary' do
-
     it 'will return "No transactions to show" if history is empty' do
       expect(@statement.transaction_summary).to eq 'No transactions to show'
     end

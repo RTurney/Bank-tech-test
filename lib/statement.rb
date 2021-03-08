@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Statement
   attr_reader :history
 
@@ -8,5 +10,4 @@ class Statement
   def transaction_summary
     'No transactions to show'
   end
-
 end

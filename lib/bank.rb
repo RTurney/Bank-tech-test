@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'statement'
 # Bank class
 class Bank
@@ -22,7 +23,7 @@ class Bank
   end
 
   def print_statement
-    return @user_statement.transaction_summary
+    @user_statement.transaction_summary
   end
 
   private #------------------------------
