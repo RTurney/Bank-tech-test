@@ -9,8 +9,6 @@ ruby '3.0.0'
 gem 'rubocop'
 
 
-
-
 group :test do
   gem 'rspec'
 
