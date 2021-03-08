@@ -19,7 +19,7 @@ To install this script run:
 To use this code please run form the command line:
 ```
 cd Bank-tech-test
-irb -r 'lib/bank'
+irb -r './lib/bank'
 ```
 To create a bank object please run:
 ```

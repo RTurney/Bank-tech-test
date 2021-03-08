@@ -19,4 +19,12 @@ describe Bank do
       expect(@bank.account).to eq 100
     end
   end
+
+  describe '.withdraw' do
+    it 'allows users to withdraw money from their account' do
+      @bank.deposit(10)
+      @bank.withdraw(5)
+      expect(@bank.account).to eq 5
+    end
+  end
 end
