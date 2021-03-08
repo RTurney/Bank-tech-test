@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require 'bank'
 
 describe Bank do
@@ -29,6 +28,12 @@ describe Bank do
 
     it "won't allow users to withdraw more than their account" do
       expect { @bank.withdraw(100) }.to raise_error 'Request denied. Not enough money in account.'
+    end
+  end
+
+  describe '.statement' do
+    it 'returns "No transations to show" if there has been no transations' do
+      expect(@bank.statement).to eq 'No transactions to show'
     end
   end
 end

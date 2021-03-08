@@ -9,6 +9,7 @@ class Bank
 
   def initialize
     @balance = 0
+    @history = []
   end
 
   def deposit(amount)
@@ -18,6 +19,10 @@ class Bank
   def withdraw(amount)
     withdrawal_checker(amount)
     @balance -= amount
+  end
+
+  def statement
+    return 'No transactions to show' if @history.empty?
   end
 
   private #------------------------------
