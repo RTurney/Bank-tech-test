@@ -13,6 +13,7 @@ class Bank
   end
 
   def withdraw(amount)
+    raise "Request denied. Not enough money in account." if (@account - amount) < 0
     @account -= amount
   end
 end

@@ -26,5 +26,9 @@ describe Bank do
       @bank.withdraw(5)
       expect(@bank.account).to eq 5
     end
+
+    it "won't allow users to withdraw more than their account" do
+      expect{ @bank.withdraw(100) }.to raise_error "Request denied. Not enough money in account."
+    end
   end
 end
