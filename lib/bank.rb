@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require_relative 'statement'
 # Bank class
 class Bank
   attr_reader :balance
@@ -9,7 +9,7 @@ class Bank
 
   def initialize
     @balance = 0
-    @history = []
+    @user_statement = Statement.new
   end
 
   def deposit(amount)
@@ -21,8 +21,8 @@ class Bank
     @balance -= amount
   end
 
-  def statement
-    return 'No transactions to show' if @history.empty?
+  def print_statement
+    return @user_statement.transaction_summary
   end
 
   private #------------------------------

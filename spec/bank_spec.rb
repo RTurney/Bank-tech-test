@@ -2,6 +2,7 @@
 require 'bank'
 
 describe Bank do
+
   before(:each) do
     @bank = Bank.new
   end
@@ -32,8 +33,10 @@ describe Bank do
   end
 
   describe '.statement' do
-    it 'returns "No transations to show" if there has been no transations' do
-      expect(@bank.statement).to eq 'No transactions to show'
+    it 'returns "No transactions to show" if there has been no transations' do
+      allow_any_instance_of(Statement).to receive(:transaction_summary).and_return('No transactions to show')
+
+      expect(@bank.print_statement).to eq 'No transactions to show'
     end
   end
 end
