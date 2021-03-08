@@ -9,14 +9,14 @@ describe Bank do
 
   describe 'on initialisation' do
     it 'has an empty account' do
-      expect(@bank.account).to eq 0
+      expect(@bank.balance).to eq 0
     end
   end
 
   describe '.deposit' do
     it 'allows users to add money to their account' do
       @bank.deposit(100)
-      expect(@bank.account).to eq 100
+      expect(@bank.balance).to eq 100
     end
   end
 
@@ -24,7 +24,7 @@ describe Bank do
     it 'allows users to withdraw money from their account' do
       @bank.deposit(10)
       @bank.withdraw(5)
-      expect(@bank.account).to eq 5
+      expect(@bank.balance).to eq 5
     end
 
     it "won't allow users to withdraw more than their account" do

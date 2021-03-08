@@ -2,31 +2,31 @@
 
 # Bank class
 class Bank
-  attr_reader :account
+  attr_reader :balance
 
   # Error message contsants
   WITHDRAWL_ERROR = 'Request denied. Not enough money in account.'
 
   def initialize
-    @account = 0
+    @balance = 0
   end
 
   def deposit(amount)
-    @account += amount
+    @balance += amount
   end
 
   def withdraw(amount)
     withdrawal_checker(amount)
-    @account -= amount
+    @balance -= amount
   end
 
   private #------------------------------
 
   def withdrawal_checker(withdrawl_amount)
-    raise WITHDRAWL_ERROR if negative_amount_checker(withdrawl_amount)
+    raise WITHDRAWL_ERROR if negative_balance_checker(withdrawl_amount)
   end
 
-  def negative_amount_checker(withdrawl_amount)
-    (@account - withdrawl_amount).negative?
+  def negative_balance_checker(withdrawl_amount)
+    (@balance - withdrawl_amount).negative?
   end
 end
