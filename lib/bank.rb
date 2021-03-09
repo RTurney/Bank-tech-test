@@ -10,7 +10,6 @@ class Bank
   NEGATIVE_INPUT_ERROR = 'Cannot input negative values.'
   INCORRECT_INPUT_ERROR = 'Request denied. Please enter your amount as an integer.'
 
-
   def initialize
     @balance = 0
     @user_statement = Statement.new
@@ -41,7 +40,6 @@ class Bank
     input_type_checker(input)
     negative_input_checker(input)
   end
-
 
   def withdrawal_checker(withdrawl_amount)
     raise NEGATIVE_BALANCE_ERROR if negative_balance_checker(withdrawl_amount)
