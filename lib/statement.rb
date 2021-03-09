@@ -33,7 +33,7 @@ class Statement
   private #---------------------
 
   def transaction_date
-    Time.new.strftime('%Y/%m/%d')
+    Time.new.strftime('%d/%m/%Y')
   end
 
   def credit_calculator(amount, current_balance)
@@ -58,7 +58,7 @@ class Statement
 
   def transaction_table_rows
     row = []
-    @transaction_history.map do |transaction|
+    @transaction_history.reverse.map do |transaction|
       row.push(transaction.join(' || '))
     end
     row.join("\n")

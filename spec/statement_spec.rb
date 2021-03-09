@@ -5,11 +5,11 @@ require 'statement'
 describe Statement do
   before(:each) do
     @statement = Statement.new
-    @date = Time.new.strftime('%Y/%m/%d')
+    @date = Time.new.strftime('%d/%m/%Y')
   end
 
   describe 'on initialisation' do
-    it 'will have an empty hash' do
+    it 'will have an empty array' do
       expect(@statement.transaction_history).to eq []
     end
   end
@@ -41,7 +41,7 @@ describe Statement do
     it 'returns all transactions in the correct format' do
       @statement.add_credit(100, 0)
       @statement.withdraw_debit(20, 100)
-      expect(@statement.transaction_summary).to eq "date || credit || debit || balance\n#{@date} || 100.00 ||  || 100.00\n#{@date} ||  || 20.00 || 80.00"
+      expect(@statement.transaction_summary).to eq "date || credit || debit || balance\n#{@date} ||  || 20.00 || 80.00\n#{@date} || 100.00 ||  || 100.00"
     end
   end
 end
