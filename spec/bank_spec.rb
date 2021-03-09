@@ -3,7 +3,6 @@
 require 'bank'
 
 describe Bank do
-
   describe 'on initialisation' do
     it 'has an empty account' do
       expect(subject.balance).to eq 0
@@ -17,7 +16,7 @@ describe Bank do
     end
 
     it "won't allow users to input negative values" do
-      expect { subject.deposit(-100) }.to raise_error "Cannot input negative values."
+      expect { subject.deposit(-100) }.to raise_error 'Cannot input negative values.'
     end
   end
 

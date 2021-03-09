@@ -17,14 +17,14 @@ describe Statement do
   describe '.add_credit' do
     it 'will add the date, credit amount and balance to the transaction_history' do
       @statement.add_credit(100, 0)
-      expect(@statement.transaction_history[0]).to eq([@date, 100, "", 100])
+      expect(@statement.transaction_history[0]).to eq([@date, 100, '', 100])
     end
   end
 
   describe '.withdraw_debit' do
     it 'will add the date, credit amount and balance to the transaction_history' do
       @statement.withdraw_debit(10, 20)
-      expect(@statement.transaction_history[0]).to eq([@date, "", 10, 10])
+      expect(@statement.transaction_history[0]).to eq([@date, '', 10, 10])
     end
   end
 

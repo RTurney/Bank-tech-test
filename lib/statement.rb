@@ -16,18 +16,18 @@ class Statement
 
   def transaction_summary
     return NO_TRANSACTIONS_WARNING if no_transactions?
-    
+
     transaction_table
   end
 
   def add_credit(credit, balance)
     current_balance = credit_calculator(credit, balance)
-    @transaction_history.push(transaction(credit, "", current_balance))
+    @transaction_history.push(transaction(credit, '', current_balance))
   end
 
   def withdraw_debit(debit, balance)
     current_balance = debit_calculator(debit, balance)
-    @transaction_history.push(transaction("", debit, current_balance))
+    @transaction_history.push(transaction('', debit, current_balance))
   end
 
   private #---------------------
