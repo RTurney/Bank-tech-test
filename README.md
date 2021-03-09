@@ -2,7 +2,7 @@
 
 This is the repo for the bank tech test. This script will allow users to withdraw/deposit an amount into their account. Users can print bank statements detailing their recent transactions.  
 
-## Build status:
+## Build status:
 
 At it's current build status. This script allows users to create a bank object with which they can deposit or withdraw money to/from, as well as print a statement of all their transactions.
 
@@ -22,14 +22,18 @@ Here is a list of the currently implemented features with screenshots.
 <img src="public/Bank_withdraw.png" width="500">
 * Can only withdraw money that is available in account
 <img src="public/Bank_withdrawl_error.png" width="500" height="150">
-* Statement class
-* Statement class has empty history on initialisation
-* statement class can add credit transaction to history
-* statement class can add debit transaction to history
-* statement class can build a transaction table with all transactions
 * Bank can print out a transaction statement
 <img src="public/Bank_print_statement.png" width="500">
 
+* Statement class
+
+* Statement class has empty history on initialisation
+
+* statement class can add credit transaction to history
+
+* statement class can add debit transaction to history
+
+* statement class can build a transaction table with all transactions
 
 ## User instructions:
 
