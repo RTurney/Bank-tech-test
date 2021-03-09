@@ -18,6 +18,10 @@ describe Bank do
     it "won't allow users to input negative values" do
       expect { subject.deposit(-100) }.to raise_error 'Cannot input negative values.'
     end
+
+    it 'will not allow any other input types' do
+      expect { subject.deposit("100") }.to raise_error 'Request denied. Please enter your amount as an integer.'
+    end
   end
 
   describe '.withdraw' do

@@ -6,8 +6,10 @@ class Bank
   attr_reader :balance
 
   # Error message contsants
-  WITHDRAWL_ERROR = 'Request denied. Not enough money in account.'
+  NEGATIVE_BALANCE_ERROR = 'Request denied. Not enough money in account.'
   NEGATIVE_INPUT_ERROR = 'Cannot input negative values.'
+  INCORRECT_INPUT_ERROR = 'Request denied. Please enter your amount as an integer.'
+
 
   def initialize
     @balance = 0
@@ -15,6 +17,7 @@ class Bank
   end
 
   def deposit(amount)
+    input_type_checker(amount)
     negative_input_checker(amount)
 
     @user_statement.add_credit(amount, @balance)
@@ -24,7 +27,7 @@ class Bank
   def withdraw(amount)
     withdrawal_checker(amount)
     negative_input_checker(amount)
-    
+
     @user_statement.withdraw_debit(amount, @balance)
     @balance -= amount
   end
@@ -36,7 +39,7 @@ class Bank
   private #------------------------------
 
   def withdrawal_checker(withdrawl_amount)
-    raise WITHDRAWL_ERROR if negative_balance_checker(withdrawl_amount)
+    raise NEGATIVE_BALANCE_ERROR if negative_balance_checker(withdrawl_amount)
   end
 
   def negative_input_checker(input_amount)
@@ -45,5 +48,9 @@ class Bank
 
   def negative_balance_checker(withdrawl_amount)
     (@balance - withdrawl_amount).negative?
+  end
+
+  def input_type_checker(input)
+    raise INCORRECT_INPUT_ERROR unless input.is_a? Integer
   end
 end
