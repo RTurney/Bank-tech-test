@@ -19,6 +19,8 @@ A transaction summary statement is still in development.
 * Statement class has empty history on initialisation
 * statement class can add credit transaction to history
 * statement class can add debit transaction to history
+* statement class can build a transaction table with all transactions
+* Bank can print out a transaction statement
 
 
 ## User instructions:
@@ -63,8 +65,8 @@ The full spectrum of tests can be found within the spec folder and are run with 
  * ~~statement class~~
  * ~~statement includes credit with date and balance~~
  * ~~statement includes debit with date and balance~~
- * statement can format itself in as a table with all transactions
- * bank can print statement as a table
+ * ~~statement can format itself in as a table with all transactions~~
+ * ~~bank can print statement as a table~~ 
 
 ## User stories:
 

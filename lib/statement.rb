@@ -4,28 +4,30 @@
 class Statement
   attr_reader :transaction_history
 
-  #Error message constants
+  # Error message constants
   NO_TRANSACTIONS_WARNING = 'No transactions to show'
 
   # statement columns constant
-  COLUMN_LABELS = ['date', 'credit', 'debit', 'balance']
+  COLUMN_LABELS = %w[date credit debit balance].freeze
+
   def initialize
     @transaction_history = []
   end
 
   def transaction_summary
-    return NO_TRANSACTIONS_WARNING if no_transactions
-    COLUMN_LABELS.join(' || ') + "\n" + transaction_table
+    return NO_TRANSACTIONS_WARNING if no_transactions?
+
+    transaction_table
   end
 
   def add_credit(credit, balance)
     current_balance = credit_calculator(credit, balance)
-    @transaction_history.push(transaction(credit, 0,  current_balance))
+    @transaction_history.push(transaction(credit, "", current_balance))
   end
 
   def withdraw_debit(debit, balance)
     current_balance = debit_calculator(debit, balance)
-    @transaction_history.push(transaction(0, debit, current_balance))
+    @transaction_history.push(transaction("", debit, current_balance))
   end
 
   private #---------------------
@@ -46,15 +48,23 @@ class Statement
     [transaction_date, credit, debit, balance]
   end
 
-  def no_transactions
+  def no_transactions?
     @transaction_history.empty?
   end
 
   def transaction_table
+    transaction_table_columns + transaction_table_rows
+  end
+
+  def transaction_table_rows
     row = []
     @transaction_history.map do |transaction|
       row.push(transaction.join(' || '))
     end
-    return row.join("\n")
+    row.join("\n")
+  end
+
+  def transaction_table_columns
+    "#{COLUMN_LABELS.join(' || ')}\n"
   end
 end
