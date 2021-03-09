@@ -33,10 +33,10 @@ describe Bank do
   end
 
   describe '.statement' do
-    it 'returns "No transactions to show" if there has been no transations' do
+    it 'returns "No transactions to show" to output if there has been no transations' do
       allow_any_instance_of(Statement).to receive(:transaction_summary).and_return('No transactions to show')
 
-      expect(@bank.print_statement).to eq 'No transactions to show'
+      expect { @bank.print_statement }.to output("No transactions to show\n").to_stdout
     end
   end
 end

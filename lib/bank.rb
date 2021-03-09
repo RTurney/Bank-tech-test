@@ -25,7 +25,7 @@ class Bank
   end
 
   def print_statement
-    @user_statement.transaction_summary
+    puts @user_statement.transaction_summary
   end
 
   private #------------------------------

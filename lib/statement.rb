@@ -2,7 +2,7 @@
 
 # class for Bank account transaction history
 class Statement
-  attr_reader :history
+  attr_reader :transaction_history
 
   #Error message constants
   NO_TRANSACTIONS_WARNING = 'No transactions to show'
@@ -10,7 +10,7 @@ class Statement
   # statement columns constant
   COLUMN_LABELS = ['date', 'credit', 'debit', 'balance']
   def initialize
-    @history = []
+    @transaction_history = []
   end
 
   def transaction_summary
@@ -20,12 +20,12 @@ class Statement
 
   def add_credit(credit, balance)
     current_balance = credit_calculator(credit, balance)
-    @history.push(transaction(credit, 0,  current_balance))
+    @transaction_history.push(transaction(credit, 0,  current_balance))
   end
 
   def withdraw_debit(debit, balance)
     current_balance = debit_calculator(debit, balance)
-    @history.push(transaction(0, debit, current_balance))
+    @transaction_history.push(transaction(0, debit, current_balance))
   end
 
   private #---------------------
@@ -43,20 +43,18 @@ class Statement
   end
 
   def transaction(credit, debit, balance)
-    { date: transaction_date, credit: credit, debit: debit, balance: balance }
+    [transaction_date, credit, debit, balance]
   end
 
   def no_transactions
-    @history.empty?
+    @transaction_history.empty?
   end
 
   def transaction_table
-    line = []
-    @history.map do |transaction|
-      transaction.each do |key, value|
-        line.push(value)
-      end
+    row = []
+    @transaction_history.map do |transaction|
+      row.push(transaction.join(' || '))
     end
-    return line.join(' || ')
+    return row.join("\n")
   end
 end
