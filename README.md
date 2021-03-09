@@ -72,6 +72,11 @@ If you wish to run the test infrastructure for this project, just run ` rspec ` 
 
 The full spectrum of tests can be found within the spec folder and are run with RSpec.
 
+Current status:
+All 11 tests passing.
+100% coverage
+<img src='public/Tests_and_coverage.png'>
+
 ## Upcoming features:
  This is a list of upcoming features to be implemented within this project:
 

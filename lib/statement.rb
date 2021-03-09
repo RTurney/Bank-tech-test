@@ -16,7 +16,7 @@ class Statement
 
   def transaction_summary
     return NO_TRANSACTIONS_WARNING if no_transactions?
-
+    
     transaction_table
   end
 
