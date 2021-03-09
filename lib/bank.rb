@@ -24,8 +24,8 @@ class Bank
   end
 
   def withdraw(amount)
+    input_checker(amount)
     withdrawal_checker(amount)
-    negative_input_checker(amount)
 
     @user_statement.withdraw_debit(amount, @balance)
     @balance -= amount
