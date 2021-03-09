@@ -22,12 +22,12 @@ class Statement
 
   def add_credit(credit, balance)
     current_balance = credit_calculator(credit, balance)
-    @transaction_history.push(transaction(credit, '', current_balance))
+    @transaction_history.push(transaction(convert_number(credit), '', current_balance))
   end
 
   def withdraw_debit(debit, balance)
     current_balance = debit_calculator(debit, balance)
-    @transaction_history.push(transaction('', debit, current_balance))
+    @transaction_history.push(transaction('', convert_number(debit), current_balance))
   end
 
   private #---------------------
@@ -37,11 +37,11 @@ class Statement
   end
 
   def credit_calculator(amount, current_balance)
-    current_balance + amount
+    convert_number(current_balance + amount)
   end
 
   def debit_calculator(amount, current_balance)
-    current_balance - amount
+    convert_number(current_balance - amount)
   end
 
   def transaction(credit, debit, balance)
@@ -66,5 +66,9 @@ class Statement
 
   def transaction_table_columns
     "#{COLUMN_LABELS.join(' || ')}\n"
+  end
+
+  def convert_number(number)
+    '%.2f' % number
   end
 end
