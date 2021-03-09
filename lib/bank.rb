@@ -14,11 +14,13 @@ class Bank
   end
 
   def deposit(amount)
+    @user_statement.add_credit(amount, @balance)
     @balance += amount
   end
 
   def withdraw(amount)
     withdrawal_checker(amount)
+    @user_statement.withdraw_debit(amount, @balance)
     @balance -= amount
   end
 
