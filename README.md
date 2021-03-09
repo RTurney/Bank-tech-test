@@ -13,22 +13,22 @@ Future development may include adding a database or csv system for long term mem
 Here is a list of the currently implemented features with screenshots.
 
 * Bank class exists
-![screenshot](public/Bank_class.png)
+![Bank class screenshot](public/Bank_class.png)
 * Has an empty account on initialisation
-![screenshot](public/Bank_balance.png)
+![Bank balance screenshot](public/Bank_balance.png)
 * Can deposit money within the account
-![Alt text](public/Bank_deposit.png)
+![Bank deposit method screenshot](public/Bank_deposit.png)
 * Can withdraw money from the account
-![Alt text](public/Bank_withdraw.png)
+![Bank withdraw method screenshot](public/Bank_withdraw.png)
 * Can only withdraw money that is available in account
-![Alt text](public/Bank_withdrawl_error.png)
+![Bank withdraw error screenshot](public/Bank_withdrawl_error.png)
 * Statement class
 * Statement class has empty history on initialisation
 * statement class can add credit transaction to history
 * statement class can add debit transaction to history
 * statement class can build a transaction table with all transactions
 * Bank can print out a transaction statement
-![Alt text](public/Bank_print_statement.png)
+![Bank print statement screenshot](public/Bank_print_statement.png)
 
 
 ## User instructions:
