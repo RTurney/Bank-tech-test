@@ -13,17 +13,17 @@ Future development may include adding a database or csv system for long term mem
 Here is a list of the currently implemented features with screenshots.
 
 * Bank class exists
-<img src="public/Bank_class.png" width="500" height="50">
+<img src="public/Bank_class.png" width="800">
 * Has an empty account on initialisation
-<img src="public/Bank_balance.png" width="500">
+<img src="public/Bank_balance.png" width="800">
 * Can deposit money within the account
-<img src="public/Bank_deposit.png" width="500">
+<img src="public/Bank_deposit.png" width="300">
 * Can withdraw money from the account
-<img src="public/Bank_withdraw.png" width="500">
+<img src="public/Bank_withdraw.png" width="300">
 * Can only withdraw money that is available in account
-<img src="public/Bank_withdrawl_error.png" width="500" height="150">
+<img src="public/Bank_withdrawl_error.png" width="800">
 * Bank can print out a transaction statement
-<img src="public/Bank_print_statement.png" width="500">
+<img src="public/Bank_print_statement.png" width="300">
 
 * Statement class
 
