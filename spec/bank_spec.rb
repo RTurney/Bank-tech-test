@@ -30,6 +30,10 @@ describe Bank do
     it "won't allow users to withdraw more than their account" do
       expect { subject.withdraw(100) }.to raise_error 'Request denied. Not enough money in account.'
     end
+
+    it 'will not allow users to withdraw a negative amount' do
+      expect {subject.withdraw(-100) }.to raise_error 'Cannot input negative values.'
+    end
   end
 
   describe '.statement' do

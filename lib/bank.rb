@@ -7,7 +7,7 @@ class Bank
 
   # Error message contsants
   WITHDRAWL_ERROR = 'Request denied. Not enough money in account.'
-  NEGATIVE_DEPOSIT_ERROR = 'Cannot input negative values.'
+  NEGATIVE_INPUT_ERROR = 'Cannot input negative values.'
 
   def initialize
     @balance = 0
@@ -15,13 +15,16 @@ class Bank
   end
 
   def deposit(amount)
-    negative_deposit_checker(amount)
+    negative_input_checker(amount)
+
     @user_statement.add_credit(amount, @balance)
     @balance += amount
   end
 
   def withdraw(amount)
     withdrawal_checker(amount)
+    negative_input_checker(amount)
+    
     @user_statement.withdraw_debit(amount, @balance)
     @balance -= amount
   end
@@ -36,8 +39,8 @@ class Bank
     raise WITHDRAWL_ERROR if negative_balance_checker(withdrawl_amount)
   end
 
-  def negative_deposit_checker(deposit_amount)
-    raise NEGATIVE_DEPOSIT_ERROR if deposit_amount.negative?
+  def negative_input_checker(input_amount)
+    raise NEGATIVE_INPUT_ERROR if input_amount.negative?
   end
 
   def negative_balance_checker(withdrawl_amount)
