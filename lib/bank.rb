@@ -17,8 +17,7 @@ class Bank
   end
 
   def deposit(amount)
-    input_type_checker(amount)
-    negative_input_checker(amount)
+    input_checker(amount)
 
     @user_statement.add_credit(amount, @balance)
     @balance += amount
@@ -37,6 +36,12 @@ class Bank
   end
 
   private #------------------------------
+
+  def input_checker(input)
+    input_type_checker(input)
+    negative_input_checker(input)
+  end
+
 
   def withdrawal_checker(withdrawl_amount)
     raise NEGATIVE_BALANCE_ERROR if negative_balance_checker(withdrawl_amount)
