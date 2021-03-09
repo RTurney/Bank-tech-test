@@ -13,11 +13,11 @@ Future development may include adding a database or csv system for long term mem
 Here is a list of the currently implemented features with screenshots.
 
 * Bank class exists
-![Bank class screenshot](public/Bank_class.png)
+![Bank class screenshot](Bank_class.png)
 * Has an empty account on initialisation
-![Bank balance screenshot](public/Bank_balance.png)
+![Bank balance screenshot](Bank_balance.png)
 * Can deposit money within the account
-![Bank deposit method screenshot](public/Bank_deposit.png)
+![Bank deposit method screenshot](Bank_deposit.png)
 * Can withdraw money from the account
 ![Bank withdraw method screenshot](public/Bank_withdraw.png)
 * Can only withdraw money that is available in account
@@ -64,7 +64,7 @@ bank.print_statement
 
 ## Tests
 
-If you wish to run the test infrastructure for this project, just run `<rspec>` in the command terminal.
+If you wish to run the test infrastructure for this project, just run ` rspec ` in the command terminal.
 
 The full spectrum of tests can be found within the spec folder and are run with RSpec.
 
