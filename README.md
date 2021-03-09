@@ -4,23 +4,31 @@ This is the repo for the bank tech test. This script will allow users to withdra
 
 ## Build status:
 
-At its current implementation, this code allows users to initialise a bank account, add and withdraw a money.
+At it's current build status. This script allows users to create a bank object with which they can deposit or withdraw money to/from, as well as print a statement of all their transactions.
 
-A transaction summary statement is still in development.
+Future development may include adding a database or csv system for long term memory.
 
 ## Implemented features:
 
+Here is a list of the currently implemented features with screenshots.
+
 * Bank class exists
+![Alt text](public/Bank class .png)
 * Has an empty account on initialisation
+![Alt text](public/Bank balance.png)
 * Can deposit money within the account
+![Alt text](public/Bank deposit .png)
 * Can withdraw money from the account
+![Alt text](public/Bank withdraw.png)
 * Can only withdraw money that is available in account
+![Alt text](public/Bank withdrawl error.png)
 * Statement class
 * Statement class has empty history on initialisation
 * statement class can add credit transaction to history
 * statement class can add debit transaction to history
 * statement class can build a transaction table with all transactions
 * Bank can print out a transaction statement
+![Alt text](public/Bank print statement.png)
 
 
 ## User instructions:
@@ -37,6 +45,10 @@ To create a bank object please run:
 ```
 bank = Bank.new  
 ```
+To check your current balance please run:
+```
+bank.balance
+```
 To deposit some money please run:
 ```
  bank.deposit(amount)
@@ -47,7 +59,7 @@ bank.withdraw(amount)
 ```
 To print a bank statement please run:
 ```
-bank.statement
+bank.print_statement
 ```
 
 ## Tests
@@ -66,7 +78,7 @@ The full spectrum of tests can be found within the spec folder and are run with 
  * ~~statement includes credit with date and balance~~
  * ~~statement includes debit with date and balance~~
  * ~~statement can format itself in as a table with all transactions~~
- * ~~bank can print statement as a table~~ 
+ * ~~bank can print statement as a table~~
 
 ## User stories:
 
