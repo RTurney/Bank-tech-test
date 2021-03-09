@@ -22,11 +22,13 @@ class Statement
 
   def add_credit(credit, balance)
     current_balance = credit_calculator(credit, balance)
+
     @transaction_history.push(transaction(convert_number(credit), '', current_balance))
   end
 
   def withdraw_debit(debit, balance)
     current_balance = debit_calculator(debit, balance)
+    
     @transaction_history.push(transaction('', convert_number(debit), current_balance))
   end
 
