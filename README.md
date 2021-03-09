@@ -22,6 +22,10 @@ Here is a list of the currently implemented features with screenshots.
 <img src="public/Bank_withdraw.png" width="300">
 * Can only withdraw money that is available in account
 <img src="public/Bank_withdrawl_error.png" width="800">
+* Can only withdraw or deposit integer types
+<img src="public/Bank_wrong_input_error.png">
+* Can not deposit or withdraw a negative amount
+<img src="public/Bank_negative_input_error.png"> 
 * Bank can print out a transaction statement
 <img src="public/Bank_print_statement.png" width="300">
 
